@@ -1,0 +1,31 @@
+import mongoose from "mongoose";
+
+
+const groupSchema = new mongoose.Schema(
+{
+  name: {
+    type: String,
+    required: true
+  },
+
+  owner: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+    required: true
+  },
+
+  members: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User"
+  }],
+
+  mode: {
+    type: String,
+    enum: ["HOST", "FREE", "VOTING"],
+    default: "HOST"
+  }
+},
+{ timestamps: true }
+);
+
+export const Group = mongoose.model("Group", groupSchema);
