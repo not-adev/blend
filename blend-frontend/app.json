@@ -19,10 +19,11 @@
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.arifdemoaccount.blendfrontend"
     },
     "web": {
-      "bundler" : "metro",
+      "bundler": "metro",
       "output": "static",
       "favicon": "./assets/images/favicon.png"
     },
@@ -45,6 +46,12 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "45394c94-730d-493e-9f78-817308088606"
+      }
     }
   }
 }
